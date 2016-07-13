@@ -9,6 +9,8 @@ syntax on
 set background=dark
 colorscheme solarized
 filetype plugin indent on
+
+" Keys Mapping
 map <F2> :NERDTreeToggle<CR>
 map <F7> mzgg=G`z
 

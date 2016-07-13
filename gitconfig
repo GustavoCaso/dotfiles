@@ -1,5 +1,19 @@
 [user]
-	name = GustavoCaso
-	email = gustavocaso@gmail.com
+  name = GustavoCaso
+  email = gustavo@airrefund.com
 [core]
-	editor = vim
+  excludesfile = ~/.gitignore_global
+  editor = /usr/local/bin/vim
+[alias]
+    tree  = log --graph --decorate --oneline --abbrev-commit
+    s     = status
+    aa    = add .
+    dsf   = "!git diff --color $@ | diff-so-fancy"
+    nc    = diff --staged
+    back  = checkout develop
+    empty = commit --allow-empty
+    amend = commit --amend
+[push]
+  default = current
+[pull]
+  default = current
