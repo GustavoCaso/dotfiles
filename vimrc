@@ -42,11 +42,7 @@ map <Leader>l :call RunLastSpec()<CR>
 map <Leader>a :call RunAllSpecs()<CR>
 
 " Backups
-if has("vms")
-  set nobackup " do not keep a backup file, use versions instead
-else
-  set backup   " keep a backup file
-endif
+set backup   " keep a backup file
 
 set backupdir=~/.vim/backups " Where backups will go.
 
