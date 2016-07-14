@@ -5,14 +5,16 @@
   excludesfile = ~/.gitignore_global
   editor = /usr/local/bin/vim
 [alias]
-    tree  = log --graph --decorate --oneline --abbrev-commit
-    s     = status
-    aa    = add .
-    dsf   = "!git diff --color $@ | diff-so-fancy"
-    nc    = diff --staged
-    back  = checkout develop
-    empty = commit --allow-empty
-    amend = commit --amend
+  tree  = log --graph --decorate --oneline --abbrev-commit
+  s     = status
+  aa    = add .
+  dsf   = "!git diff --color $@ | diff-so-fancy"
+  nc    = diff --staged
+  back  = checkout develop
+  empty = commit --allow-empty
+  amend = commit --amend
+  fst   = !sh -c 'git flow feature start $1' -
+  ffn   = !sh -c 'git flow feature finish $1' -
 [push]
   default = current
 [pull]
