@@ -15,6 +15,9 @@ filetype plugin indent on
 map <F2> :NERDTreeToggle<CR>
 map <F7> mzgg=G`z
 
+" Split Direction
+set splitright
+
 " Leader
 let mapleader = "\<Space>"
 
@@ -51,7 +54,7 @@ set directory=~/.vim/tmp     " Where temporary files will go.
 
 " Hightlight
 set hlsearch
-
+map <F1> :noh<CR>
 
 
 
