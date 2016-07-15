@@ -47,9 +47,7 @@ map <Leader>a :call RunAllSpecs()<CR>
 
 " Backups
 set backup   " keep a backup file
-
-set backupdir=~/.vim/backups " Where backups will go.
-
+set backupdir=~/.vim/backup " Where backups will gos
 set directory=~/.vim/tmp     " Where temporary files will go.
 
 " Hightlight
