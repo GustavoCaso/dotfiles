@@ -14,6 +14,7 @@ filetype plugin indent on
 " Keys Mapping
 map <F2> :NERDTreeToggle<CR>
 map <F7> mzgg=G`z
+nnoremap <F6> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
 
 " Split Direction
 set splitright
