@@ -4,6 +4,7 @@ Plug 'scrooloose/nerdtree'
 Plug 'kien/ctrlp.vim'
 Plug 'altercation/vim-colors-solarized'
 Plug 'thoughtbot/vim-rspec'
+Plug 'mileszs/ack.vim'
 call plug#end()
 set wildignore+=*/tmp/*,*/node_modules/*,*/public/*,*/log/*
 syntax on
@@ -34,6 +35,8 @@ set expandtab
 set nu
 set cursorcolumn
 set cursorline
+set ruler
+set colorcolumn=80
 
 " RSpec.vim mappings
 let g:rspec_runner = "os_x_iterm2"
