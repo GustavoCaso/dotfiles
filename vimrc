@@ -1,10 +1,11 @@
 set nocompatible
 call plug#begin('~/.vim/bundle')
-Plug 'scrooloose/nerdtree'
-Plug 'kien/ctrlp.vim'
-Plug 'altercation/vim-colors-solarized'
-Plug 'thoughtbot/vim-rspec'
-Plug 'mileszs/ack.vim'
+  Plug 'scrooloose/nerdtree'
+  Plug 'kien/ctrlp.vim'
+  Plug 'altercation/vim-colors-solarized'
+  Plug 'thoughtbot/vim-rspec'
+  Plug 'mileszs/ack.vim'
+  Plug 'elixir-lang/vim-elixir'
 call plug#end()
 set wildignore+=*/tmp/*,*/node_modules/*,*/public/*,*/log/*
 syntax on
