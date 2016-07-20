@@ -5,6 +5,7 @@ call plug#begin('~/.vim/bundle')
   Plug 'altercation/vim-colors-solarized'
   Plug 'thoughtbot/vim-rspec'
   Plug 'mileszs/ack.vim'
+  Plug 'vim-airline/vim-airline'
   Plug 'elixir-lang/vim-elixir'
 call plug#end()
 set wildignore+=*/tmp/*,*/node_modules/*,*/public/*,*/log/*
@@ -48,7 +49,7 @@ map <Leader>a :call RunAllSpecs()<CR>
 
 " Backups
 set backup   " keep a backup file
-set backupdir=~/.vim/backup " Where backups will gos
+set backupdir=~/.vim/backups " Where backups will gos
 set directory=~/.vim/tmp     " Where temporary files will go.
 
 " Hightlight
