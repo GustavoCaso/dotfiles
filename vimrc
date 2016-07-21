@@ -6,6 +6,7 @@ call plug#begin('~/.vim/bundle')
   Plug 'thoughtbot/vim-rspec'
   Plug 'mileszs/ack.vim'
   Plug 'vim-airline/vim-airline'
+  Plug 'tpope/vim-fugitive'
   Plug 'elixir-lang/vim-elixir'
 call plug#end()
 set wildignore+=*/tmp/*,*/node_modules/*,*/public/*,*/log/*
@@ -57,14 +58,5 @@ set directory=~/.vim/tmp     " Where temporary files will go.
 set hlsearch
 map <F1> :noh<CR>
 
-
-
-
-
-
-
-
-
-
-
-
+" Auto Comands
+autocmd BufWritePre * %s/\($\n\s*\)\+\%$//e
