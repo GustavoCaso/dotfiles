@@ -18,6 +18,7 @@ filetype plugin indent on
 map <F2> :NERDTreeToggle<CR>
 map <F7> mzgg=G`z
 nnoremap <F6> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
+map <Leader>d orequire 'pry'<cr>binding.pry<esc>:w<cr>
 
 " Split Direction
 set splitright
