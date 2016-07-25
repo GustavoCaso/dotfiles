@@ -15,6 +15,9 @@ set background=dark
 colorscheme solarized
 filetype plugin indent on
 
+" Leader
+let mapleader = "\<Space>"
+
 " Keys Mapping
 map <F2> :NERDTreeToggle<CR>
 map <F7> mzgg=G`z
@@ -24,8 +27,6 @@ map <Leader>d orequire 'pry'<cr>binding.pry<esc>:w<cr>
 " Split Direction
 set splitright
 
-" Leader
-let mapleader = "\<Space>"
 
 " Font
 set gfn=Monaco:h14
