@@ -26,7 +26,12 @@ map <Leader>d orequire 'pry'<cr>binding.pry<esc>:w<cr>
 
 " Split Direction
 set splitright
-
+" Trailing spaces
+highlight ExtraWhitespace ctermbg=red guibg=red
+match ExtraWhitespace /\s\+$/
+autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
+autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
+autocmd InsertLeave * match ExtraWhitespace /\s\+$/
 
 " Font
 set gfn=Monaco:h14
