@@ -22,7 +22,6 @@ let mapleader = "\<Space>"
 " Keys Mapping
 map <F2> :NERDTreeToggle<CR>
 map <F7> mzgg=G`z
-nnoremap <F6> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
 map <Leader>d orequire 'pry'<cr>binding.pry<esc>:w<cr>
 " Enter Normal mode alternative
 imap <C-space> <Esc>
@@ -38,7 +37,8 @@ match ExtraWhitespace /\s\+$/
 autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
 autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
 autocmd InsertLeave * match ExtraWhitespace /\s\+$/
-
+nnoremap <F6> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
+autocmd BufWritePre *.rb,*.html,*.js,*.jsx :%s/\s\+$//e
 " Font
 set gfn=Monaco:h14
 " Tabs
