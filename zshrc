@@ -3,7 +3,7 @@ export ZSH=~/.oh-my-zsh
 
 ZSH_THEME="agnoster"
 
-plugins=(git zsh-syntax-highlighting)
+plugins=(git zsh-autosuggestions)
 
 # User configuration
 
@@ -21,5 +21,6 @@ source ~/.nvm/nvm.sh
 
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
-
 export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/latest/bin
+source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=magenta"
