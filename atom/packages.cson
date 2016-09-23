@@ -1,0 +1,6 @@
+packages: [
+  "file-icons"
+  "linter"
+  "linter-ruby"
+  "package-sync"
+]
