@@ -1,1 +1,1 @@
-SYMLINK_DIRS="backups bundle tmp"
+SYMLINK_DIRS="backups bundle tmp blob-store compile-cache packages storage"
