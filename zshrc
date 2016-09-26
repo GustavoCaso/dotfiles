@@ -1,14 +1,13 @@
-# Path to your oh-my-zsh installation.
-export ZSH=~/.oh-my-zsh
+source ~/.antigen/antigen.zsh
+antigen use oh-my-zsh
+antigen bundle zsh-users/zsh-syntax-highlighting
+antigen bundle zsh-users/zsh-autosuggestions
+antigen theme agnoster
+antigen apply
 
-ZSH_THEME="agnoster"
-
-plugins=(git zsh-autosuggestions)
+export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=magenta"
 
 # User configuration
-
-source $ZSH/oh-my-zsh.sh
-
 export DISABLE_SPRING=true
 
 export LC_ALL="en_US.UTF-8"
@@ -22,5 +21,3 @@ source ~/.nvm/nvm.sh
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/latest/bin
-source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=magenta"
