@@ -1,5 +1,6 @@
 packages: [
   "file-icons"
+  "language-protobuf"
   "linter"
   "linter-ruby"
   "package-sync"
