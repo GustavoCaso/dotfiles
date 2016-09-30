@@ -1,7 +1,9 @@
 packages: [
   "file-icons"
+  "language-haml"
   "language-protobuf"
   "linter"
   "linter-ruby"
   "package-sync"
+  "react"
 ]

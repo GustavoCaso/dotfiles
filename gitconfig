@@ -15,6 +15,10 @@
   amend = commit --amend
   fst   = !sh -c 'git flow feature start $1' -
   ffn   = !sh -c 'git flow feature finish $1' -
+  rst   = !sh -c 'git flow release start $1' -
+  rfn   = !sh -c 'git flow release finish $1' -
+  hst   = !sh -c 'git flow hotfix start $1' -
+  hfn   = !sh -c 'git flow hotfix finish $1' -
 [push]
   default = current
 [pull]
