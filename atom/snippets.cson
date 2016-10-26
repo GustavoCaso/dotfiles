@@ -28,9 +28,24 @@
   'Init Spec file':
     'prefix': 'rspec'
     'body': """
-      require 'rails_helper'
+      require '$1_helper'
 
-      describe $1 do
+      describe $2 do
 
       end
     """
+
+  'Class definition':
+    'prefix': 'class'
+    'body':"""
+      class $1
+
+        def initialize($2)
+          $3
+        end
+
+      end
+    """
+  'require file':
+    'prefix': 'requ'
+    'body': 'require \'$1\''

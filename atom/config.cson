@@ -1,4 +1,6 @@
 "*":
+  core:
+    telemetryConsent: "limited"
   editor:
     fontSize: 16
   "exception-reporting":
