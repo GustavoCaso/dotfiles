@@ -3,7 +3,7 @@
   email = gustavocaso@gmail.com
 [core]
   excludesfile = ~/.gitignore_global
-  editor = /usr/local/bin/vim
+  editor = "vim"
 [alias]
   tree  = log --graph --decorate --oneline --abbrev-commit
   s     = status
