@@ -1,12 +1,13 @@
 "*":
   core:
     telemetryConsent: "limited"
-  editor:
-    fontSize: 16
+  editor: {}
   "exception-reporting":
     userId: "9b40b61f-6f2c-1a91-d23e-20ca992a725c"
   "package-sync":
     createOnChange: true
     forceOverwrite: true
+  "tree-view":
+    hideVcsIgnoredFiles: true
   welcome:
     showOnStartup: false

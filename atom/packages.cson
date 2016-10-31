@@ -1,5 +1,6 @@
 packages: [
   "file-icons"
+  "language-elixir"
   "language-haml"
   "language-protobuf"
   "linter"
