@@ -3,6 +3,7 @@ packages: [
   "language-haml"
   "language-protobuf"
   "linter"
+  "linter-coffeelint"
   "linter-ruby"
   "package-sync"
   "react"
