@@ -11,7 +11,7 @@ if [[ $answer != "n" ]] && [[ $answer != "N" ]] ; then
     brew update
 
     echo 'Installing RVM'
-    sh -c "$(curl -sSL https://get.rvm.io | zsh)"
+    sh -c "$(curl -sSL https://get.rvm.io | bash)"
     echo 'Installing NVM'
     sh -c "$(curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.32.1/install.sh | bash)"
 
