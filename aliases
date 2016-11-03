@@ -1,0 +1,2 @@
+alias mps="mix phoenix.server"
+alias elixir_c "iex -S mix"
