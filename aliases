@@ -1,2 +1,2 @@
 alias mps="mix phoenix.server"
-alias elixir_c "iex -S mix"
+alias elixir_c="iex -S mix"
