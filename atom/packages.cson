@@ -5,6 +5,7 @@ packages: [
   "language-protobuf"
   "linter"
   "linter-coffeelint"
+  "linter-elixirc"
   "linter-ruby"
   "package-sync"
   "react"
