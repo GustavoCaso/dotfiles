@@ -10,10 +10,12 @@ if [[ $answer != "n" ]] && [[ $answer != "N" ]] ; then
     brew doctor
     brew update
 
-    echo 'Installing RVM'
+    echo 'Installing RVM (Ruby Version Manager)'
     sh -c "$(curl -sSL https://get.rvm.io | bash)"
-    echo 'Installing NVM'
+    echo 'Installing NVM (Node Version Manager)'
     sh -c "$(curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.32.1/install.sh | bash)"
+    echo 'Installing Kiex (Elixir Version Manager)'
+    sh -c "$(curl -sSL https://raw.githubusercontent.com/taylor/kiex/master/install | bash -s)"
 
     # ===
     # The regular brew installable packages
