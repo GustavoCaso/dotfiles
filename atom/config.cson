@@ -2,9 +2,11 @@
   core:
     allowPendingPaneItems: false
     telemetryConsent: "limited"
-  editor: {}
+  editor:
+    showInvisibles: true
   "exception-reporting":
     userId: "9b40b61f-6f2c-1a91-d23e-20ca992a725c"
+  "linter-rubocop": {}
   "package-sync":
     createOnChange: true
     forceOverwrite: true

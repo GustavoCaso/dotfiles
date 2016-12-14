@@ -1,11 +1,13 @@
 packages: [
   "file-icons"
   "language-elixir"
+  "language-elm"
   "language-haml"
   "language-protobuf"
   "linter"
   "linter-coffeelint"
   "linter-elixirc"
+  "linter-rubocop"
   "linter-ruby"
   "package-sync"
   "react"

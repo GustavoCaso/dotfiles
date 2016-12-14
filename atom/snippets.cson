@@ -49,3 +49,8 @@
   'require file':
     'prefix': 'requ'
     'body': 'require \'$1\''
+
+'text.hamlc':
+  'DebuggingDust':
+    'prefix': 'dustdebug'
+    'body': '{@contextDump to=console/}'
