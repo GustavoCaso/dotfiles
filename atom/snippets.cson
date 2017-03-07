@@ -21,7 +21,11 @@
 # http://flight-manual.atom.io/using-atom/sections/basic-customization/#_cson
 
 '.source.ruby':
-  'Debugging':
+  'Debugging with Byebug':
+    'prefix': 'byebug'
+    'body': 'require \'byebug\'; byebug'
+
+  'Debugging with Pry':
     'prefix': 'debug'
     'body': 'require \'pry\'; binding.pry'
 
@@ -46,7 +50,7 @@
 
       end
     """
-    
+
   'require file':
     'prefix': 'requ'
     'body': 'require \'$1\''

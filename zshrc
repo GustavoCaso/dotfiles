@@ -25,3 +25,4 @@ export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 [[ -s "$HOME/.kiex/scripts/kiex" ]] && source "$HOME/.kiex/scripts/kiex" # Load Kiex into a shell
 export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/latest/bin
 source $HOME/.aliases
+export PATH="/usr/local/sbin:$PATH"

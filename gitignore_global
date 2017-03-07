@@ -2,3 +2,7 @@
 .DS_Store
 *.swp
 node_modules
+*.rdb
+vendor/*
+*.log
+.byebug_history
