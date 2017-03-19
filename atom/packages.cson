@@ -1,5 +1,7 @@
 packages: [
+  "busy-signal"
   "file-icons"
+  "intentions"
   "language-elixir"
   "language-elm"
   "language-haml"
@@ -9,6 +11,7 @@ packages: [
   "linter-elixirc"
   "linter-rubocop"
   "linter-ruby"
+  "linter-ui-default"
   "package-sync"
   "react"
 ]

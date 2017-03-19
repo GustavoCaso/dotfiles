@@ -1,6 +1,7 @@
 *~
 .DS_Store
 *.swp
+vendor/bundle
 node_modules
 *.rdb
 vendor/*

@@ -10,6 +10,8 @@
   linter:
     showErrorPanel: false
   "linter-rubocop": {}
+  "linter-ui-default":
+    showPanel: true
   "package-sync":
     createOnChange: true
     forceOverwrite: true
