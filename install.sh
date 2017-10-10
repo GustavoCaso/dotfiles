@@ -22,6 +22,7 @@ if [[ $answer != "n" ]] && [[ $answer != "N" ]] ; then
     # ===
     brew install diff-so-fancy
     brew install git-flow
+    brew install zplug
     brew tap thoughtbot/formulae
     brew install rcm
     brew tap caskroom/cask
@@ -33,7 +34,7 @@ if [[ $answer != "n" ]] && [[ $answer != "N" ]] ; then
     brew cask install spotify
 
     echo 'Symlinking all dotfiles'
-    lsrc -x install.sh -S backups -S bundle -S tmp -S blob-store -S compile-cache -S packages -S storage -S antigen
+    lsrc -x install.sh -S backups -S bundle -S tmp -S blob-store -S compile-cache -S packages -S storage
     echo -n 'This will be all the symlink created for you, are you happy with it (Y/n)'; read answer
 
     if [[ $answer != "n" ]] && [[ $answer != "N" ]] ; then
