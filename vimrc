@@ -4,7 +4,6 @@ call plug#begin('~/.vim/bundle')
   Plug 'kien/ctrlp.vim'
   Plug 'altercation/vim-colors-solarized'
   Plug 'thoughtbot/vim-rspec'
-  Plug 'mileszs/ack.vim'
   Plug 'vim-airline/vim-airline'
   Plug 'tpope/vim-fugitive'
   Plug 'elixir-lang/vim-elixir'
@@ -12,9 +11,15 @@ call plug#end()
 set wildignore+=*/tmp/*,*/node_modules/*,*/public/*,*/log/*
 syntax on
 set background=dark
+colorscheme solarized
 set laststatus=2
 filetype plugin indent on
 
+if executable('ag')
+  " Use ag in CtrlP for listing files. Lightning fast and respects
+  " .gitignore
+  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+endif
 " Leader
 let mapleader = "\<Space>"
 
