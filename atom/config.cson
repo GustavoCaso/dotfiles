@@ -3,18 +3,19 @@
     allowPendingPaneItems: false
     telemetryConsent: "limited"
   editor:
-    fontSize: 13
+    fontSize: 15
     showInvisibles: true
   "exception-reporting":
     userId: "9b40b61f-6f2c-1a91-d23e-20ca992a725c"
-  linter:
-    showErrorPanel: false
+  linter: {}
   "linter-rubocop": {}
   "linter-ui-default":
-    showPanel: true
+    panelHeight: 69
   "package-sync":
     createOnChange: true
     forceOverwrite: true
+  "status-bar":
+    isVisible: true
   "tree-view": {}
   welcome:
     showOnStartup: false

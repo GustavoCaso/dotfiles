@@ -1,5 +1,6 @@
 packages: [
   "busy-signal"
+  "editorconfig"
   "file-icons"
   "intentions"
   "language-elixir"
@@ -12,6 +13,7 @@ packages: [
   "linter-rubocop"
   "linter-ruby"
   "linter-ui-default"
+  "nyancat"
   "package-sync"
   "react"
 ]
