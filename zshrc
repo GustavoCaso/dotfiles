@@ -3,16 +3,19 @@ source $ZPLUG_HOME/init.zsh
 
 zplug "zsh-users/zsh-syntax-highlighting", defer:2
 zplug "zsh-users/zsh-autosuggestions"
-zplug mafredri/zsh-async, from:github
-zplug sindresorhus/pure, use:pure.zsh, from:github, as:theme
+zplug "denysdovhan/spaceship-zsh-theme", use:spaceship.zsh, from:github, as:theme
 zplug load
 
 stty icrnl
+# Appends every command to the history file once it is executed
+setopt inc_append_history
+# # Reloads the history whenever you use it
+setopt share_history
+HISTFILE=~/.zsh_history
 export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=magenta"
 
 # User configuration
 export DISABLE_SPRING=true
-HISTFILE=~/.zsh_history
 export LC_ALL="en_US.UTF-8"
 
 export DEFAULT_USER=`whoami`
