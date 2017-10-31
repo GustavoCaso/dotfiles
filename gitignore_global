@@ -4,6 +4,6 @@
 vendor/bundle
 node_modules
 *.rdb
-vendor/*
 *.log
+vendor/bundle
 .byebug_history
