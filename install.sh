@@ -3,8 +3,6 @@
 #==============
 echo -n "Install all base packages and set up all symlinks (Y/n) => "; read answer
 if [[ $answer != "n" ]] && [[ $answer != "N" ]] ; then
-    echo 'Installing Oh My ZSH'
-    sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
     echo 'Installing Homebrew'
     ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
     brew doctor
