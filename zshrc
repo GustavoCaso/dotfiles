@@ -7,13 +7,15 @@ zplug "denysdovhan/spaceship-zsh-theme", use:spaceship.zsh, from:github, as:them
 zplug load
 
 stty icrnl
-# Appends every command to the history file once it is executed
-setopt inc_append_history
-# # Reloads the history whenever you use it
-setopt share_history
-HISTFILE=~/.zsh_history
 export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=magenta"
 
+# History
+HISTSIZE=5000
+HISTFILE=~/.zsh_history
+SAVEHIST=5000
+setopt appendhistory
+setopt sharehistory
+setopt incappendhistory
 # User configuration
 export DISABLE_SPRING=true
 export LC_ALL="en_US.UTF-8"
