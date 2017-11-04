@@ -10,8 +10,8 @@ if [[ $answer != "n" ]] && [[ $answer != "N" ]] ; then
 
     echo 'Installing RVM (Ruby Version Manager)'
     sh -c "$(curl -sSL https://get.rvm.io | bash)"
-    echo 'Installing NVM (Node Version Manager)'
-    sh -c "$(curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.32.1/install.sh | bash)"
+    echo 'Installing n (Node Version Manager)'
+    sh -c "$(curl -L https://git.io/n-install | bash -s -- -y)"
     echo 'Installing Kiex (Elixir Version Manager)'
     sh -c "$(curl -sSL https://raw.githubusercontent.com/taylor/kiex/master/install | bash -s)"
 
