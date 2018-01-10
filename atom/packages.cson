@@ -1,6 +1,7 @@
 packages: [
   "busy-signal"
   "editorconfig"
+  "elm-format"
   "file-icons"
   "intentions"
   "language-elixir"
@@ -10,10 +11,12 @@ packages: [
   "linter"
   "linter-coffeelint"
   "linter-elixirc"
+  "linter-elm-make"
   "linter-rubocop"
   "linter-ruby"
   "linter-ui-default"
   "nyancat"
   "package-sync"
   "react"
+  "teletype"
 ]

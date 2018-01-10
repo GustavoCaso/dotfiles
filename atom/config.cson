@@ -3,14 +3,14 @@
     allowPendingPaneItems: false
     telemetryConsent: "limited"
   editor:
-    fontSize: 15
     showInvisibles: true
   "exception-reporting":
     userId: "9b40b61f-6f2c-1a91-d23e-20ca992a725c"
   linter: {}
-  "linter-rubocop": {}
-  "linter-ui-default":
-    panelHeight: 69
+  "linter-rubocop":
+    command: "/Users/gustavo/.rvm/gems/ruby-2.4.2/bin/rubocop"
+    disableWhenNoConfigFile: true
+  "linter-ui-default": {}
   "package-sync":
     createOnChange: true
     forceOverwrite: true
