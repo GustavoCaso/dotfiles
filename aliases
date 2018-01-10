@@ -1,2 +1,3 @@
-alias mps="mix phoenix.server"
+alias mps="iex -S mix phx.server"
 alias elixir_c="iex -S mix"
+preview () { bundle exec cap preview deploy BRANCH=$1}
