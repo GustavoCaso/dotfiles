@@ -1,2 +1,2 @@
-SYMLINK_DIRS="backups bundle tmp blob-store compile-cache packages storage antigen"
+SYMLINK_DIRS="backups tmp blob-store compile-cache packages storage antigen"
 EXCLUDES="install.sh"

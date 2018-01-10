@@ -33,11 +33,11 @@ if [[ $answer != "n" ]] && [[ $answer != "N" ]] ; then
     brew cask install spotify
 
     echo 'Symlinking all dotfiles'
-    lsrc -x install.sh -S backups -S bundle -S tmp -S blob-store -S compile-cache -S packages -S storage
+    lsrc -x install.sh -S backups -S tmp -S blob-store -S compile-cache -S packages -S storage
     echo -n 'This will be all the symlink created for you, are you happy with it (Y/n)'; read answer
 
     if [[ $answer != "n" ]] && [[ $answer != "N" ]] ; then
-      rcup -x install.sh -S backups -S bundle -S tmp -S blob-store -S compile-cache -S packages -S storage
+      rcup -x install.sh -S backups -S tmp -S blob-store -S compile-cache -S packages -S storage
     fi
 
     echo 'Finish Happy Hacking ;)'
