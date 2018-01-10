@@ -11,7 +11,6 @@ call plug#end()
 set wildignore+=*/tmp/*,*/node_modules/*,*/public/*,*/log/*
 syntax on
 set background=dark
-colorscheme solarized
 set laststatus=2
 filetype plugin indent on
 
