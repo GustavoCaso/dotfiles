@@ -20,6 +20,7 @@ if [[ $answer != "n" ]] && [[ $answer != "N" ]] ; then
     # ===
     brew install diff-so-fancy
     brew install git-flow
+    brew zsh
     brew install zplug
     brew tap thoughtbot/formulae
     brew install rcm
@@ -36,7 +37,7 @@ if [[ $answer != "n" ]] && [[ $answer != "N" ]] ; then
     echo -n 'This will be all the symlink created for you, are you happy with it (Y/n)'; read answer
 
     if [[ $answer != "n" ]] && [[ $answer != "N" ]] ; then
-      RCRC=rcrc rcup -v
+      rcup -x install.sh -S backups -S bundle -S tmp -S blob-store -S compile-cache -S packages -S storage
     fi
 
     echo 'Finish Happy Hacking ;)'
