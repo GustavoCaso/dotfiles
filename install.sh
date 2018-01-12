@@ -8,8 +8,8 @@ if [[ $answer != "n" ]] && [[ $answer != "N" ]] ; then
     brew doctor
     brew update
 
-    echo 'Installing RVM (Ruby Version Manager)'
-    sh -c "$(curl -sSL https://get.rvm.io | bash)"
+    echo 'Installing rbenv (Ruby Version Manager)'
+    brew install rbenv
     echo 'Installing n (Node Version Manager)'
     sh -c "$(curl -L https://git.io/n-install | bash -s -- -y)"
     echo 'Installing Kiex (Elixir Version Manager)'

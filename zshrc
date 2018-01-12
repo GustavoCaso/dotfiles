@@ -21,9 +21,7 @@ export DISABLE_SPRING=true
 export LC_ALL="en_US.UTF-8"
 
 export DEFAULT_USER=`whoami`
-
-export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+eval "$(rbenv init -)"
 [[ -s "$HOME/.kiex/scripts/kiex" ]] && source "$HOME/.kiex/scripts/kiex" # Load Kiex into a shell
 export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/latest/bin
 source $HOME/.aliases
