@@ -25,8 +25,7 @@ if [[ $answer != "n" ]] && [[ $answer != "N" ]] ; then
     brew install rcm
     brew tap caskroom/cask
     brew tap caskroom/versions
-    echo 'Installing Atom.io, DropBox, Google Chrome and Spotify'
-    brew cask install atom
+    echo 'Installing DropBox, Google Chrome and Spotify'
     brew cask install dropbox
     brew cask install google-chrome
     brew cask install spotify
