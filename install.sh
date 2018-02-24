@@ -19,7 +19,6 @@ if [[ $answer != "n" ]] && [[ $answer != "N" ]] ; then
     # The regular brew installable packages
     # ===
     brew install diff-so-fancy
-    brew install git-flow
     brew zsh
     brew install zplug
     brew tap thoughtbot/formulae

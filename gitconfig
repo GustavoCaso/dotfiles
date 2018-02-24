@@ -14,14 +14,6 @@
   back  = checkout develop
   empty = commit --allow-empty
   amend = commit --amend
-  fst   = !sh -c 'git flow feature start $1' -
-  ffn   = !sh -c 'git flow feature finish $1' -
-  rst   = !sh -c 'git flow release start $1' -
-  rfn   = !sh -c 'git flow release finish $1' -
-  hst   = !sh -c 'git flow hotfix start $1' -
-  hfn   = !sh -c 'git flow hotfix finish $1' -
-  upo   = "! git checkout develop && git pull origin develop && git checkout master && git pull origin master && git checkout develop"
-  release = "! git checkout develop && git push origin develop && git checkout master && git push origin master && git checkout develop && git push --tags"
 [push]
   default = current
 [pull]
