@@ -1,5 +1,4 @@
 packages: [
-  "000-project-shell-env"
   "busy-signal"
   "file-icons"
   "intentions"
