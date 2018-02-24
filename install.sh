@@ -8,6 +8,9 @@ if [[ $answer != "n" ]] && [[ $answer != "N" ]] ; then
     brew doctor
     brew update
 
+    # ===
+    # Version managers
+    # ===
     echo 'Installing rbenv (Ruby Version Manager)'
     brew install rbenv
     echo 'Installing n (Node Version Manager)'
@@ -16,20 +19,23 @@ if [[ $answer != "n" ]] && [[ $answer != "N" ]] ; then
     sh -c "$(curl -sSL https://raw.githubusercontent.com/taylor/kiex/master/install | bash -s)"
 
     # ===
-    # The regular brew installable packages
+    # The common packages
     # ===
     brew install diff-so-fancy
-    brew zsh
+    brew install zsh
     brew install zplug
     brew tap thoughtbot/formulae
     brew install rcm
     brew tap caskroom/cask
     brew tap caskroom/versions
 
-    echo 'Symlinking all dotfiles'
-    lsrc -x install.sh -S backups -S tmp -S blob-store -S compile-cache -S packages -S storage
-    echo -n 'This will be all the symlink created for you, are you happy with it (Y/n)'; read answer
+    echo 'changing shell to zsh'
+    sudo chsh -s $(which zsh) $(whoami)
 
+    echo 'Symlinking all dotfiles'
+    lsrc -x install.sh -x README.md -S backups -S tmp -S blob-store -S compile-cache -S packages -S storage
+
+    echo -n 'This will be all the symlink created for you, are you happy with it (Y/n)'; read answer
     if [[ $answer != "n" ]] && [[ $answer != "N" ]] ; then
       rcup -x install.sh -S backups -S tmp -S blob-store -S compile-cache -S packages -S storage
     fi
