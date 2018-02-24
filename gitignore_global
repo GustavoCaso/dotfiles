@@ -7,4 +7,4 @@ node_modules
 *.log
 vendor/bundle
 .byebug_history
-.bundle/
+.bundle
