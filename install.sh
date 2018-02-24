@@ -25,10 +25,6 @@ if [[ $answer != "n" ]] && [[ $answer != "N" ]] ; then
     brew install rcm
     brew tap caskroom/cask
     brew tap caskroom/versions
-    echo 'Installing DropBox, Google Chrome and Spotify'
-    brew cask install dropbox
-    brew cask install google-chrome
-    brew cask install spotify
 
     echo 'Symlinking all dotfiles'
     lsrc -x install.sh -S backups -S tmp -S blob-store -S compile-cache -S packages -S storage
