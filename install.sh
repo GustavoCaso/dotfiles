@@ -40,5 +40,13 @@ if [[ $answer != "n" ]] && [[ $answer != "N" ]] ; then
       rcup -x install.sh -S backups -S tmp -S blob-store -S compile-cache -S packages -S storage
     fi
 
+    echo 'Return to root'
+
+    cd ~/
+
+    source ~/.zshrc
+
+    zplug install
+
     echo 'Finish Happy Hacking ;)'
 fi

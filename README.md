@@ -20,5 +20,3 @@ $ git clone git@github.com:GustavoCaso/dotfiles.git .dotfiles
 $ cd .dotfiles
 $ ./install.sh
 ```
-
-After installation finish please on a new terminal widow execute `zplug install`
