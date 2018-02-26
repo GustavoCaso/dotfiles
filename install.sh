@@ -24,6 +24,7 @@ if [[ $answer != "n" ]] && [[ $answer != "N" ]] ; then
     brew install diff-so-fancy
     brew install zsh
     brew install zplug
+    brew install redis
     brew tap thoughtbot/formulae
     brew install rcm
     brew tap caskroom/cask
