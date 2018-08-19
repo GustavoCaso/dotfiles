@@ -16,15 +16,38 @@ SAVEHIST=5000
 setopt appendhistory
 setopt sharehistory
 setopt incappendhistory
+
 # User configuration
 export DISABLE_SPRING=true
 export LC_ALL="en_US.UTF-8"
 
 export DEFAULT_USER=`whoami`
-eval "$(rbenv init -)"
-[[ -s "$HOME/.kiex/scripts/kiex" ]] && source "$HOME/.kiex/scripts/kiex" # Load Kiex into a shell
-export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/latest/bin
-source $HOME/.aliases
-export PATH="/usr/local/sbin:$PATH"
+export GPG_TTY=$(tty)
 
-export N_PREFIX="$HOME/n"; [[ :$PATH: == *":$N_PREFIX/bin:"* ]] || PATH+=":$N_PREFIX/bin"  # Added by n-install (see http://git.io/n-install-repo).
+# completion
+autoload -Uz compinit
+compinit
+
+# ensure dotfiles bin directory is loaded first
+PATH="$HOME/.bin:/usr/local/sbin:$PATH"
+
+# load ASDF for version management
+[ -d "$HOME/.asdf" ] && . $HOME/.asdf/asdf.sh
+
+# add postgres app the path
+PATH=$PATH:/Applications/Postgres.app/Contents/Versions/latest/bin
+
+# go
+export GOPATH=$HOME/dev/personal/go
+export GOROOT=/usr/local/opt/go/libexec
+PATH=$PATH:$GOPATH/bin
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/gustavocaso/Downloads/google-cloud-sdk/path.zsh.inc' ]; then source '/Users/gustavocaso/Downloads/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/gustavocaso/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then source '/Users/gustavocaso/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
+
+export PATH
+
+[ -f $HOME/.aliases ] && source $HOME/.aliases

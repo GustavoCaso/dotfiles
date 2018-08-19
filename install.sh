@@ -9,16 +9,6 @@ if [[ $answer != "n" ]] && [[ $answer != "N" ]] ; then
     brew update
 
     # ===
-    # Version managers
-    # ===
-    echo 'Installing rbenv (Ruby Version Manager)'
-    brew install rbenv
-    echo 'Installing n (Node Version Manager)'
-    sh -c "$(curl -L https://git.io/n-install | bash -s -- -y)"
-    echo 'Installing Kiex (Elixir Version Manager)'
-    sh -c "$(curl -sSL https://raw.githubusercontent.com/taylor/kiex/master/install | bash -s)"
-
-    # ===
     # The common packages
     # ===
     brew install diff-so-fancy
@@ -34,11 +24,11 @@ if [[ $answer != "n" ]] && [[ $answer != "N" ]] ; then
     sudo chsh -s $(which zsh) $(whoami)
 
     echo 'Symlinking all dotfiles'
-    lsrc -x install.sh -x README.md -S backups -S tmp -S blob-store -S compile-cache -S packages -S storage
+    lsrc -x install.sh -x README.md
 
     echo -n 'This will be all the symlink created for you, are you happy with it (Y/n)'; read answer
     if [[ $answer != "n" ]] && [[ $answer != "N" ]] ; then
-      rcup -x install.sh -S backups -S tmp -S blob-store -S compile-cache -S packages -S storage
+      rcup -x install.sh -x README.md
     fi
 
     echo 'Return to root'
@@ -49,5 +39,5 @@ if [[ $answer != "n" ]] && [[ $answer != "N" ]] ; then
 
     zplug install
 
-    echo 'Finish Happy Hacking ;)'
+    echo 'Finish!!'
 fi
