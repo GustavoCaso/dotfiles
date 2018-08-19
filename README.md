@@ -3,12 +3,10 @@
 ## What will be install
 
 - Homebrew
-- Rbenv (Ruby Version Manager)
-- n (Node Version Manager)
-- Kiex (Elixir Version Manager)
 - rcm (dotfile managment)
 - Zsh (Shell)
 - Zplug
+- Redis
 
 
 ## Installation
