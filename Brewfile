@@ -1,0 +1,26 @@
+tap 'homebrew/bundle'
+tap 'homebrew/cask'
+tap 'homebrew/cask-versions'
+tap 'homebrew/core'
+tap 'homebrew/services'
+tap 'thoughtbot/formulae'
+
+brew 'coreutils'
+brew 'diff-so-fancy'
+brew 'findutils'
+brew 'gnupg'
+brew 'htop'
+brew 'imagemagick@6', link: true
+brew 'mysql'
+brew 'redis', restart_service: true
+brew 'ruby-build'
+brew 'zplug'
+brew 'zsh'
+brew 'thoughtbot/formulae/rcm'
+
+cask '1password'
+cask 'alfred'
+cask 'dash'
+cask 'dropbox'
+cask 'google-chrome'
+cask 'slack'

@@ -1,2 +1,2 @@
-EXCLUDES="README.md install.sh"
+EXCLUDES="README.md install.sh Brewfile"
 DOTFILES_DIRS="$HOME/.dotfiles"
