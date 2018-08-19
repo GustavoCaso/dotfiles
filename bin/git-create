@@ -1,0 +1,23 @@
+#!/bin/bash
+# Usage: git-create NAME_OF_THE_BRANCH
+# Check for local changes, if found will stash, checkout to master, pull
+# create new branch and pop the changes, if no local changes will do the same
+# but without stash
+
+NEW_BRANCH_NAME=$1
+CHANGES=$(git diff-index --name-only HEAD --)
+
+if [ -n "$CHANGES" ]; then
+  git stash
+  git checkout master
+  git pull origin master
+  git checkout -b $NEW_BRANCH_NAME
+  git stash pop
+else
+  git checkout master
+  git pull origin master
+  git checkout -b $NEW_BRANCH_NAME
+fi
+
+
+
