@@ -1,0 +1,51 @@
+#!/bin/bash
+# Usage: git-update-all BRACHS_TO_UPDATE | master
+# Check for local changes, if found will stash, checkout to the branches, pull
+# latest changes and return to work previous branch and apply the local changes if any
+
+# store the current dir
+CUR_DIR=$(pwd)
+
+# store all branches to update, it will default to master
+BRANCHES_TO_UPDATE=( "${@-master}" )
+
+
+# Let the person running the script know what's going on.
+printf "\n\e[4mPulling in latest changes for all repositories...\e[0m\n"
+
+# Find all git repositories and update it to the master latest revision
+for i in $(find . -name ".git" -type d -maxdepth 2 | sed -n "s/\.\/\(.*\)\/.*/\1/p"); do
+    echo "";
+    printf "\e[33m${i}\e[0m\n";
+
+    # We have have to cd into the project
+    cd "$i";
+
+    CURRENT_BRANCH=$(git rev-parse --abbrev-ref HEAD)
+    CHANGES=$(git diff-index --name-only HEAD --)
+    # stash if there are any changes
+    if [ -n "$CHANGES" ]; then
+      printf "\e[34mStaging local changes\e[0m\n";
+      git stash
+    fi
+    # update all branches
+    for branch in "${BRANCHES_TO_UPDATE[@]}"
+    do
+      printf "\e[31mUpdating ${branch}\e[0m\n";
+      git checkout $branch
+      git pull origin $branch
+    done
+    printf "\e[33mReturning to previous branch\e[0m\n";
+    git checkout $CURRENT_BRANCH
+
+    # stash pop if there are any changes
+    if [ -n "$CHANGES" ]; then
+      printf "\e[34mRestoring local changes\e[0m\n";
+      git stash pop
+    fi
+
+    # lets get back to the CUR_DIR
+    cd $CUR_DIR
+done
+
+printf "\n\e[32mComplete\e[0m\n"
