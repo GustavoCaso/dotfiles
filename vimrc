@@ -75,3 +75,4 @@ map <F1> :noh<CR>
 
 " Auto Comands
 autocmd BufWritePre * %s/\($\n\s*\)\+\%$//e
+autocmd Filetype gitcommit setlocal spell textwidth=72

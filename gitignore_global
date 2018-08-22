@@ -8,4 +8,5 @@ node_modules
 vendor/bundle
 .byebug_history
 .bundle
+.tool-versions
 .vscode/**
