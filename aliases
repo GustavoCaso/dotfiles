@@ -1,3 +1,13 @@
+# Elixir
 alias mps="iex -S mix phx.server"
 alias elixir_c="iex -S mix"
-preview () { bundle exec cap preview deploy BRANCH=$1}
+
+# Networking Aliases
+alias port_usage="lsof -i -P"
+listen_on () { lsof -nP -i4TCP:$1 | grep LISTEN }
+
+# Git
+alias g="git"
+
+# Shortcuts
+alias dotfiles="cd ~/.dotfiles && code ."
