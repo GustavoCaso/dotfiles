@@ -26,3 +26,5 @@
   cleanup = strip
 [rebase]
   autosquash = true
+[init]
+  templatedir = ~/.git-templates
