@@ -5,6 +5,10 @@ alias elixir_c="iex -S mix"
 # Networking Aliases
 alias port_usage="lsof -i -P"
 listen_on () { lsof -nP -i4TCP:$1 | grep LISTEN }
+serve() {
+  port="${1:-3000}"
+  ruby -run -e httpd . -p $port
+}
 
 # Git
 alias g="git"
