@@ -1,0 +1,5 @@
+#!/bin/sh
+
+cp -v $HOME/.dotfiles/visual_studio_code/settings.json $HOME/Library/Application\ Support/Code/User/settings.json
+cp -v $HOME/.dotfiles/visual_studio_code/keybindings.json $HOME/Library/Application\ Support/Code/User/keybindings.json
+cp -vR $HOME/.dotfiles/visual_studio_code/snippets/. $HOME/Library/Application\ Support/Code/User/snippets/

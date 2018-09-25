@@ -25,7 +25,7 @@ if [[ $answer != "n" ]] && [[ $answer != "N" ]] ; then
 
   echo -n 'This will be all the symlink created for you, are you happy with it (Y/n)'; read answer
   if [[ $answer != "n" ]] && [[ $answer != "N" ]] ; then
-    rcup -x install.sh -x README.md -x Brewfile
+    rcup -x install.sh -x README.md -x Brewfile -x visual_studio_code
   fi
 
   echo 'Returning to root'

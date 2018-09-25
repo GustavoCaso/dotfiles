@@ -1,0 +1,31 @@
+{
+    "files.exclude": {
+        "**/.git": false,
+    },
+    "editor.minimap.enabled": false,
+    "workbench.sideBar.location": "left",
+    "editor.multiCursorModifier": "ctrlCmd",
+    "workbench.colorTheme": "Atom One Dark",
+    "editor.tabSize": 2,
+    "editor.tabCompletion": true,
+   "editor.snippetSuggestions": "top",
+    "files.insertFinalNewline": true,
+    "ruby.codeCompletion": "solargraph",
+    "ruby.intellisense": "solargraph",
+    "ruby.lint": {
+        "rubocop": true,
+        "ruby": true, //Runs ruby -wc
+    },
+    "ruby.locate": {
+	    "include": "**/*.rb",
+	    "exclude": "{**/@(test|spec|tmp|vendor|.*),**/@(test|spec|tmp|vendor|.*)/**,**/*_spec.rb}"
+    },
+    "explorer.confirmDelete": false,
+    "workbench.startupEditor": "newUntitledFile",
+    "files.trimTrailingWhitespace": true,
+    "window.zoomLevel": 0,
+    "workbench.editor.enablePreview": false,
+    "extensions.ignoreRecommendations": false,
+    "diffEditor.ignoreTrimWhitespace": false,
+    "breadcrumbs.enabled": true
+}
