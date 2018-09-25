@@ -8,7 +8,7 @@ if [[ $answer != "n" ]] && [[ $answer != "N" ]] ; then
     ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
   fi
 
-  if ! [ -x "$(command -v asdf)"]: then
+  if ! [ -x "$(command -v asdf)"]; then
     echo 'Installing asdf for version management'
     git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.5.1
   fi
