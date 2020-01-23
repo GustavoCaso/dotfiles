@@ -21,7 +21,7 @@ if [[ $answer != "n" ]] && [[ $answer != "N" ]] ; then
   sudo chsh -s $(which zsh) $(whoami)
 
   echo 'Symlinking all dotfiles'
-  lsrc -x install.sh -x README.md -x Brewfile
+  lsrc -x install.sh -x README.md -x Brewfile -x visual_studio_code
 
   echo -n 'This will be all the symlink created for you, are you happy with it (Y/n)'; read answer
   if [[ $answer != "n" ]] && [[ $answer != "N" ]] ; then

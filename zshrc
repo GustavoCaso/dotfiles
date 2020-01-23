@@ -20,6 +20,7 @@ setopt incappendhistory
 # User configuration
 export DISABLE_SPRING=true
 export LC_ALL="en_US.UTF-8"
+export BUNDLER_EDITOR=code
 
 export DEFAULT_USER=`whoami`
 export GPG_TTY=$(tty)
@@ -37,17 +38,30 @@ PATH="$HOME/.bin:/usr/local/sbin:$PATH"
 # add postgres app the path
 PATH=$PATH:/Applications/Postgres.app/Contents/Versions/latest/bin
 
+export PKG_CONFIG_PATH=/usr/local/lib/pkgconfig:/usr/local/opt/libxml2/lib/pkgconfig
+export LOG_LEVEL=debug
+
 # go
-export GOPATH=$HOME/dev/personal/go
-export GOROOT=/usr/local/opt/go/libexec
+export GOPATH=$HOME
 PATH=$PATH:$GOPATH/bin
 
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/gustavocaso/Downloads/google-cloud-sdk/path.zsh.inc' ]; then source '/Users/gustavocaso/Downloads/google-cloud-sdk/path.zsh.inc'; fi
+# rust
+PATH="$HOME/.cargo/bin:$PATH"
 
-# The next line enables shell command completion for gcloud.
-if [ -f '/Users/gustavocaso/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then source '/Users/gustavocaso/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
+#python
+eval "$(pyenv init -)"
 
 export PATH
 
 [ -f $HOME/.aliases ] && source $HOME/.aliases
+
+[ -f /opt/dev/dev.sh ] && source /opt/dev/dev.sh
+
+for file in /Users/gustavocaso/src/github.com/Shopify/cloudplatform/workflow-utils/*.bash; do source ${file}; done
+kubectl-short-aliases
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# cloudplatform: add Shopify clusters to your local kubernetes config
+export KUBECONFIG=${KUBECONFIG:+$KUBECONFIG:}/Users/gustavocaso/.kube/config:/Users/gustavocaso/.kube/config.shopify.cloudplatform
+export KUBE_EDITOR='code --wait'
