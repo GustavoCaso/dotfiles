@@ -80,4 +80,4 @@ random_job_pod() {
 alias rjp=random_job_pod
 
 # Shortcuts
-alias dotfiles="cd ~/.dotfiles && code ."
+alias dotfiles="cd ~/.dotfiles && git config user.name "Gustavo Caso" && git config user.email gustavocaso@gmail.com && code ."
