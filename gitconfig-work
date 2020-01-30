@@ -2,7 +2,7 @@
   name = Gustavo Caso
   email = gustavo.caso@shopify.com
 [credential]
-	helper = osxkeychain
+	helper = store --file /opt/dev/var/private/git_credential_store
 [url "https://github.com/Shopify/"]
 	insteadOf = git@github.com:Shopify/
 	insteadOf = git@github.com:shopify/
