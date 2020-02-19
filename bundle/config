@@ -3,5 +3,5 @@ BUNDLE_PATH: vendor/bundle
 BUNDLE_GEM__TEST: rspec
 BUNDLE_GEM__MIT: 'true'
 BUNDLE_GEM__COC: 'true'
-BUNDLE_PACKAGES__SHOPIFY__IO: 192101cc4fba62aa803a37fb487a6cfa2e006af188ec2ecb
+BUNDLE_PACKAGES__SHOPIFY__IO: 7b328b271eada5e2abb71da3ae95dec8bf3fc2338be16af2
 BUNDLE_BUILD__GDA: '--with-cflags="-D_REENTRANT -I/usr/local/Cellar/libgda/5.2.8/include/libgda-5.0 -I/usr/local/Cellar/libgda/5.2.8/include/libgda-5.0/libgda -I/usr/local/Cellar/glib/2.58.2/include/glib-2.0 -I/usr/local/Cellar/glib/2.58.2/lib/glib-2.0/include -I/usr/local/opt/gettext/include -I/usr/local/Cellar/pcre/8.42/include -I/usr/include/libxml2"'

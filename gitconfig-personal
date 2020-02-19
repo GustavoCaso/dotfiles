@@ -1,3 +1,5 @@
 [user]
   name = Gustavo Caso
   email = gustavocaso@gmail.com
+[credential]
+  helper = osxkeychain
