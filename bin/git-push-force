@@ -1,6 +1,0 @@
-#!/bin/bash
-# Usage: git-push-force
-
-CURRENT_BRANCH=$(git rev-parse --abbrev-ref HEAD)
-
-git aa && git amend && git push origin $CURRENT_BRANCH -f
