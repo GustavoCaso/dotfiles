@@ -39,7 +39,6 @@ PATH="$HOME/.bin:/usr/local/sbin:$PATH"
 PATH=$PATH:/Applications/Postgres.app/Contents/Versions/latest/bin
 
 export PKG_CONFIG_PATH=/usr/local/lib/pkgconfig:/usr/local/opt/libxml2/lib/pkgconfig
-export LOG_LEVEL=debug
 
 # go
 export GOPATH=$HOME
@@ -48,20 +47,13 @@ PATH=$PATH:$GOPATH/bin
 # rust
 PATH="$HOME/.cargo/bin:$PATH"
 
-#python
-eval "$(pyenv init -)"
-
 export PATH
 
 [ -f $HOME/.aliases ] && source $HOME/.aliases
 
-[ -f /opt/dev/dev.sh ] && source /opt/dev/dev.sh
-
-for file in /Users/gustavocaso/src/github.com/Shopify/cloudplatform/workflow-utils/*.bash; do source ${file}; done
-kubectl-short-aliases
-
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-# cloudplatform: add Shopify clusters to your local kubernetes config
-export KUBECONFIG=${KUBECONFIG:+$KUBECONFIG:}/Users/gustavocaso/.kube/config:/Users/gustavocaso/.kube/config.shopify.cloudplatform
 export KUBE_EDITOR='code --wait'
+
+# Load work related configuration
+for file in $HOME/.work/*; do source ${file}; done

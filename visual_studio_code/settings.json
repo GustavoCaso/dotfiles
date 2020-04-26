@@ -21,9 +21,7 @@
         ".bundle/**": true,
         ".byebug_history/**": true,
         ".dev/**": true,
-        ".shadowenv.d/**": true,
         "node_modules/**": true,
-        "tmp/**": true,
         "**/.git": false,
     },
     "search.exclude": {
@@ -32,7 +30,7 @@
         "node_modules/**": true,
         ".shadowenv.d/**": true,
         ".byebug_history/**": true,
-        "tmp/**": true,
+        "tmp/**": true
     },
     "explorer.confirmDelete": false,
     "window.zoomLevel": 0,
@@ -46,7 +44,7 @@
     "ruby.lint": {
         "rubocop": {
             "useBundler": true
-        },
+        }
     },
     "ruby.locate": {
 	    "include": "**/*.rb",
@@ -68,5 +66,5 @@
     "gitlens.hovers.avatars": false,
     "gitlens.blame.heatmap.location": "left",
     "gitlens.heatmap.toggleMode": "window",
-    "gitlens.statusBar.command": "gitlens.toggleCodeLens",
+    "gitlens.statusBar.command": "gitlens.toggleCodeLens"
 }

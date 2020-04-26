@@ -1,0 +1,13 @@
+# add dev
+[ -f /opt/dev/dev.sh ] && source /opt/dev/dev.sh
+
+for file in /Users/gustavocaso/src/github.com/Shopify/cloudplatform/workflow-utils/*.bash; do source ${file}; done
+kubectl-short-aliases
+
+# cloudplatform: add Shopify clusters to your local kubernetes config
+export KUBECONFIG=${KUBECONFIG:+$KUBECONFIG:}/Users/gustavocaso/.kube/config:/Users/gustavocaso/.kube/config.shopify.cloudplatform
+
+#python
+eval "$(pyenv init -)"
+
+export LOG_LEVEL=debug
