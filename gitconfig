@@ -6,6 +6,7 @@
   excludesfile = ~/.gitignore_global
   editor = "vim"
 	commitGraph = true
+	pager = diff-so-fancy
 [alias]
   current = rev-parse --abbrev-ref HEAD
   clear   = checkout .
@@ -19,15 +20,16 @@
   aa      = add .
   bclean  = "!f() { git branch --merged ${1-master} | grep -v " ${1-master}$" | xargs git branch -d; }; f"
   bprune  = ! git remote prune origin && git branch -vv | grep ': gone]' | awk '{print $1}' | xargs git branch -D
-  dsf     = "! git diff --color $@ | diff-so-fancy"
+  d       = diff
+  dm      = diff origin/master...
+  dnc     = diff --staged
   pullf   = "!f() { git fetch origin pull/$1/head:$2 && git checkout $2; }; f"
-  nc      = diff --staged
   empty   = commit --allow-empty
   amend   = commit --amend
   cmds    = "!f() { git alias | fzf | awk '{print $1}' | xargs git; }; f"
   bch     = "!f() { git branch | fzf | xargs git checkout; }; f"
   bdel    = "!f() { git branch | fzf | xargs git branch -d; }; f"
-  bdell    = "!f() { git branch | fzf | xargs git branch -D; }; f"
+  bdell   = "!f() { git branch | fzf | xargs git branch -D; }; f"
   pmr     = "!f() { local current_branch=$(git current); git checkout master ; git pull origin master ; git checkout ${current_branch}; git rebase master; }; f"
   master  = ! git checkout master && git pull origin master && git bclean
   fbranch = "!f() { git fetch origin $1 && git checkout --track origin/$1; }; f"
@@ -49,3 +51,7 @@
 	version = 2
 [gc]
 	writeCommitGraph = true
+[color]
+	ui = true
+[color "diff"]
+	commit = yellow bold
