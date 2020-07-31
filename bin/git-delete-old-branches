@@ -1,0 +1,31 @@
+#!/bin/bash
+# Usage: delete-all-branches LAST_COMMIT_IN_DAYS | 30 GIT_BRANCH_DELETE_OPTION [d,D] | -D
+
+# store the current dir
+CUR_DIR=$(pwd)
+
+# last commit is days to conider a branch for deleting
+LAST_COMMIT_IN_DAYS=${1:-30}
+GIT_BRANCH_DELETE_OPTION=${2:-D}
+TODAY=$(date)
+LAST_COMMIT_DATE="$(date -v-${LAST_COMMIT_IN_DAYS}d +%Y%m%d)"
+
+
+printf "${LAST_COMMIT_IN_DAYS}";
+printf "${GIT_BRANCH_DELETE_OPTION}";
+
+# Let the person running the script know what's going on.
+printf "\n\e[34mGathering information for all branch under this repo ${CUR_DIR}...\e[0m\n"
+
+# Loop over all not merged branches
+for branch in $(git branch --no-merged);
+do
+  printf "\e[35mChecking ${branch} last commit\e[0m\n";
+  branch_last_commit_date=$(git log -n1 --date=short --format="%cd" $branch | tr -d -)
+  if [ "$branch_last_commit_date" -lt "$LAST_COMMIT_DATE" ];
+  then
+    printf "\e[31m${branch} is too old. DELETING local branch\e[0m\n";
+    git branch -$GIT_BRANCH_DELETE_OPTION $branch
+  fi
+done
+printf "\e[32mDone\e[0m\n";
