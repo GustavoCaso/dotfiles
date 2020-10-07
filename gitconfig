@@ -6,34 +6,36 @@
   excludesfile = ~/.gitignore_global
   editor = "vim"
 	commitGraph = true
-	pager = diff-so-fancy
+	pager = diff-so-fancy | less --tabs=4 -RFX
 [alias]
-  current = rev-parse --abbrev-ref HEAD
-  clear   = checkout .
-  tree    = log --graph --decorate --oneline --abbrev-commit
-  lol     = log --pretty=format:'%h %s - %an, %ar ' --abbrev-commit --graph --decorate -n10
-  s       = status
-  c       = checkout
-  pll     = "!f() { local current_branch=$(git current); git pull origin ${current_branch}; }; f"
-  ppf     = "!f() { local current_branch=$(git current); git push origin ${current_branch} -f; }; f"
-  pp      = "!f() { local current_branch=$(git current); git push origin ${current_branch}; }; f"
   aa      = add .
+  amend   = commit --amend
+	alias   = ! git config --get-regexp ^alias\\. | sed -e s/^alias\\.// -e s/\\ /\\ =\\ /
   bclean  = "!f() { git branch --merged ${1-master} | grep -v " ${1-master}$" | xargs git branch -d; }; f"
+  bch     = "!f() { git branch | fzf | xargs git checkout; }; f"
+  bdel    = "!f() { git branch | fzf --multi | xargs git branch -d; }; f"
+  bdell   = "!f() { git branch | fzf --multi | xargs git branch -D; }; f"
   bprune  = ! git remote prune origin && git branch -vv | grep ': gone]' | awk '{print $1}' | xargs git branch -D
+  c       = checkout
+  ce      = commit --allow-empty
+  clear   = checkout .
+  cmds    = "!f() { git alias | fzf | awk '{print $1}' | xargs git; }; f"
+  current = rev-parse --abbrev-ref HEAD
   d       = diff
   dm      = diff origin/master...
   dnc     = diff --staged
-  pullf   = "!f() { git fetch origin pull/$1/head:$2 && git checkout $2; }; f"
-  empty   = commit --allow-empty
-  amend   = commit --amend
-  cmds    = "!f() { git alias | fzf | awk '{print $1}' | xargs git; }; f"
-  bch     = "!f() { git branch | fzf | xargs git checkout; }; f"
-  bdel    = "!f() { git branch | fzf | xargs git branch -d; }; f"
-  bdell   = "!f() { git branch | fzf | xargs git branch -D; }; f"
-  pmr     = "!f() { local current_branch=$(git current); git checkout master ; git pull origin master ; git checkout ${current_branch}; git rebase master; }; f"
-  master  = ! git checkout master && git pull origin master && git bclean
   fbranch = "!f() { git fetch origin $1 && git checkout --track origin/$1; }; f"
-	alias   = ! git config --get-regexp ^alias\\. | sed -e s/^alias\\.// -e s/\\ /\\ =\\ /
+  ltree    = log --graph --decorate --oneline --abbrev-commit
+  lol     = log --pretty=format:'%h %s - %an, %ar ' --abbrev-commit --graph --decorate -n10
+  master  = ! git checkout master && git pull origin master && git bclean
+  pll     = "!f() { local current_branch=$(git current); git pull origin ${current_branch}; }; f"
+  pp      = "!f() { local current_branch=$(git current); git push origin ${current_branch}; }; f"
+  ppf     = "!f() { local current_branch=$(git current); git push origin ${current_branch} -f; }; f"
+  ppff    = ! git aa && git amend && git ppf
+  pullf   = "!f() { git fetch origin pull/$1/head:$2 && git checkout $2; }; f"
+  pmr     = "!f() { local current_branch=$(git current); git checkout master ; git pull origin master ; git checkout ${current_branch}; git rebase master; }; f"
+  r       = "!f() { git s -s | awk '{print $2}' | fzf --multi | xargs -I file git restore file; }; f"
+  s       = status
 [push]
   default = current
 [pull]

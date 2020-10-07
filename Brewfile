@@ -16,6 +16,7 @@ brew 'redis', restart_service: true
 brew 'ruby-build'
 brew 'zplug'
 brew 'zsh'
+brew 'fzf'
 brew 'thoughtbot/formulae/rcm'
 
 cask '1password'

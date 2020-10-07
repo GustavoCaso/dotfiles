@@ -1,6 +1,9 @@
 # add dev
 [ -f /opt/dev/dev.sh ] && source /opt/dev/dev.sh
 
+# added by Nix installer
+if [ -e /Users/gustavocaso/.nix-profile/etc/profile.d/nix.sh ]; then . /Users/gustavocaso/.nix-profile/etc/profile.d/nix.sh; fi
+
 for file in /Users/gustavocaso/src/github.com/Shopify/cloudplatform/workflow-utils/*.bash; do source ${file}; done
 kubectl-short-aliases
 
