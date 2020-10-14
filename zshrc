@@ -56,4 +56,4 @@ export PATH
 export KUBE_EDITOR='code --wait'
 
 # Load work related configuration
-for file in $HOME/.work/*; do source ${file}; done
+[ "$WORK_COMPUTER" = true ] && for file in $HOME/.work/*; do source ${file}; done
