@@ -7,7 +7,11 @@ zplug "denysdovhan/spaceship-zsh-theme", use:spaceship.zsh, from:github, as:them
 zplug load
 
 stty icrnl
-export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=magenta"
+
+# ZSH_AUTOCOMPLETION
+autoload -Uz compinit
+compinit
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=magenta"
 
 # History
 HISTSIZE=5000
@@ -18,16 +22,55 @@ setopt sharehistory
 setopt incappendhistory
 
 # User configuration
-export DISABLE_SPRING=true
-export LC_ALL="en_US.UTF-8"
-export BUNDLER_EDITOR=code
+DISABLE_SPRING=true
+LC_ALL="en_US.UTF-8"
 
-export DEFAULT_USER=`whoami`
-export GPG_TTY=$(tty)
+BUNDLER_EDITOR=code
+KUBE_EDITOR='code --wait'
 
-# completion
-autoload -Uz compinit
-compinit
+DEFAULT_USER=`whoami`
+GPG_TTY=$(tty)
+WORK_COMPUTER=false
+
+
+# SPACESHIP THEME CONFIGURATION
+SPACESHIP_PROMPT_ORDER=(
+  #time        # Time stamps section
+  user          # Username section
+  dir           # Current directory section
+  #host          # Hostname section
+  git           # Git section (git_branch + git_status)
+  #hg            # Mercurial section (hg_branch  + hg_status)
+  package     # Package version
+  node          # Node.js section
+  ruby          # Ruby section
+  elixir        # Elixir section
+  #xcode       # Xcode section
+  #swift         # Swift section
+  golang        # Go section
+  #php           # PHP section
+  rust          # Rust section
+  #haskell       # Haskell Stack section
+  #julia       # Julia section
+  #docker      # Docker section
+  #aws           # Amazon Web Services section
+  gcloud        # Google Cloud Platform section
+  #venv          # virtualenv section
+  #conda         # conda virtualenv section
+  #pyenv         # Pyenv section
+  #dotnet        # .NET section
+  #ember       # Ember.js section
+  kubectl   # Kubectl context section
+  #terraform     # Terraform workspace section
+  exec_time     # Execution time
+  line_sep      # Line break
+  #battery       # Battery level and status
+  #vi_mode     # Vi-mode indicator
+  #jobs          # Background jobs indicator
+  exit_code     # Exit code section
+  char          # Prompt character
+)
+SPACESHIP_USER_SHOW=always
 
 # ensure dotfiles bin directory is loaded first
 PATH="$HOME/.bin:/usr/local/sbin:$PATH"
@@ -41,19 +84,14 @@ PATH=$PATH:/Applications/Postgres.app/Contents/Versions/latest/bin
 export PKG_CONFIG_PATH=/usr/local/lib/pkgconfig:/usr/local/opt/libxml2/lib/pkgconfig
 
 # go
-export GOPATH=$HOME
+GOPATH=$HOME
 PATH=$PATH:$GOPATH/bin
-
-# rust
-PATH="$HOME/.cargo/bin:$PATH"
 
 export PATH
 
 [ -f $HOME/.aliases ] && source $HOME/.aliases
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
-export KUBE_EDITOR='code --wait'
 
 # Load work related configuration
 [ "$WORK_COMPUTER" = true ] && for file in $HOME/.work/*; do source ${file}; done
