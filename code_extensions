@@ -2,9 +2,10 @@ akamud.vscode-theme-onedark
 bbenoist.Nix
 deerawan.vscode-dash
 eamodio.gitlens
+golang.go
+JakeBecker.elixir-ls
 mquandalle.graphql
 ms-vscode.cpptools
-ms-vscode.Go
 rebornix.ruby
 Shopify.vscode-shadowenv
 wingrunr21.vscode-ruby

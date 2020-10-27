@@ -25,11 +25,11 @@
         "**/.git": false,
     },
     "search.exclude": {
-        "**/.git": true,
-        "vendor/*": true,
-        "node_modules/**": true,
-        ".shadowenv.d/**": true,
         ".byebug_history/**": true,
+        ".shadowenv.d/**": true,
+        "**/.git": true,
+        "**/vendor/*": true,
+        "node_modules/**": true,
         "tmp/**": true
     },
     "explorer.confirmDelete": false,
@@ -44,16 +44,16 @@
     "ruby.lint": {
         "rubocop": {
             "useBundler": true
-        }
+        },
     },
     "ruby.locate": {
-	    "include": "**/*.rb",
-	    "exclude": "{**/@(test|spec|tmp|vendor|.*),**/@(test|spec|tmp|vendor|.*)/**,**/*_spec.rb}"
+        "include": "**/*.rb",
+        "exclude": "{**/@(test|spec|tmp|vendor|.*),**/@(test|spec|tmp|vendor|.*)/**,**/*_spec.rb}"
     },
     "go.buildOnSave": "off",
     "go.formatTool": "goimports",
     "go.lintOnSave": "file",
-    "go.useLanguageServer": false,
+    "go.useLanguageServer": true,
     "C_Cpp.updateChannel": "Insiders",
     "gitlens.views.repositories.location": "scm",
     "gitlens.views.fileHistory.location": "scm",
@@ -66,5 +66,5 @@
     "gitlens.hovers.avatars": false,
     "gitlens.blame.heatmap.location": "left",
     "gitlens.heatmap.toggleMode": "window",
-    "gitlens.statusBar.command": "gitlens.toggleCodeLens"
+    "gitlens.statusBar.command": "gitlens.toggleCodeLens",
 }
