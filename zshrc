@@ -79,7 +79,7 @@ PATH="$HOME/.bin:/usr/local/sbin:$PATH"
 [ -d "$HOME/.asdf" ] && . $HOME/.asdf/asdf.sh
 
 # add postgres app the path
-PATH=$PATH:/Applications/Postgres.app/Contents/Versions/latest/bin
+[ -x "$HOME/Applications/Postgres.app/Contents/Versions/latest/bin" ] && PATH=$PATH:/Applications/Postgres.app/Contents/Versions/latest/bin
 
 export PKG_CONFIG_PATH=/usr/local/lib/pkgconfig:/usr/local/opt/libxml2/lib/pkgconfig
 
