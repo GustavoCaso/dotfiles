@@ -5,7 +5,7 @@ echo -n "Install all base packages and set up all symlinks (Y/n) => "; read answ
 if [[ $answer != "n" ]] && [[ $answer != "N" ]] ; then
   if ! [ -x "$(command -v brew)" ]; then
     echo 'Installing Homebrew'
-    ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
   fi
 
   if ! [ -x "$(command -v asdf)"]; then
