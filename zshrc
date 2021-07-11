@@ -11,6 +11,7 @@ stty icrnl
 # ZSH_AUTOCOMPLETION
 autoload -Uz compinit
 compinit
+source <(kubectl completion zsh)
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=magenta"
 
 # History
@@ -30,7 +31,7 @@ KUBE_EDITOR='code --wait'
 
 DEFAULT_USER=`whoami`
 GPG_TTY=$(tty)
-WORK_COMPUTER=false
+WORK_COMPUTER=true
 
 
 # SPACESHIP THEME CONFIGURATION
@@ -86,8 +87,10 @@ export PKG_CONFIG_PATH=/usr/local/lib/pkgconfig:/usr/local/opt/libxml2/lib/pkgco
 # go
 GOPATH=$HOME
 PATH=$PATH:$GOPATH/bin
-
 export PATH
+
+# java
+export JAVA_HOME=$(/usr/libexec/java_home)
 
 [ -f $HOME/.aliases ] && source $HOME/.aliases
 

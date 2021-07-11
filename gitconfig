@@ -36,10 +36,12 @@
   pmr     = "!f() { local current_branch=$(git current); git checkout master ; git pull origin master ; git checkout ${current_branch}; git rebase master; }; f"
   r       = "!f() { git s -s | awk '{print $2}' | fzf --multi | xargs -I file git restore file; }; f"
   s       = status
+  wip     = ! git aa && git commit -m 'WIP'
 [push]
   default = current
 [pull]
   default = current
+	rebase = false
 [commit]
   template = ~/.gitmessage
   cleanup = strip
