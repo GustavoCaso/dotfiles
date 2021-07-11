@@ -10,5 +10,13 @@
         "command": "editor.action.reindentlines"
     },
     { "key": "ctrl+`", "command": "workbench.action.terminal.focus"},
-    { "key": "ctrl+`", "command": "workbench.action.focusActiveEditorGroup", "when": "terminalFocus"}
+    {
+        "key": "ctrl+`",
+        "command": "workbench.action.focusActiveEditorGroup",
+        "when": "terminalFocus"
+    },
+    {
+        "key": "ctrl+cmd+`",
+        "command": "workbench.action.closePanel"
+    }
 ]

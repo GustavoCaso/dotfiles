@@ -7,7 +7,6 @@
     "workbench.statusBar.visible": true,
     "workbench.activityBar.visible": true,
     "task.autoDetect": "off",
-    "editor.multiCursorModifier": "ctrlCmd",
     "editor.tabSize": 2,
     "editor.tabCompletion": "on",
     "editor.snippetSuggestions": "top",
@@ -23,6 +22,10 @@
         ".dev/**": true,
         "node_modules/**": true,
         "**/.git": false,
+        "**/.classpath": true,
+        "**/.project": true,
+        "**/.settings": true,
+        "**/.factorypath": true
     },
     "search.exclude": {
         ".byebug_history/**": true,
@@ -33,13 +36,11 @@
         "tmp/**": true
     },
     "explorer.confirmDelete": false,
-    "window.zoomLevel": 0,
     "extensions.ignoreRecommendations": false,
     "diffEditor.ignoreTrimWhitespace": false,
     "ruby.intellisense": "rubyLocate",
     "ruby.codeCompletion": "rcodetools",
     "ruby.useBundler": true,
-    "ruby.format": "rubocop",
     "ruby.useLanguageServer": true,
     "ruby.lint": {
         "rubocop": {
@@ -67,4 +68,15 @@
     "gitlens.blame.heatmap.location": "left",
     "gitlens.heatmap.toggleMode": "window",
     "gitlens.statusBar.command": "gitlens.toggleCodeLens",
+    "go.toolsManagement.autoUpdate": true,
+    "gopls.env": {
+        "GOFLAGS": "-tags=integration"
+    },
+    "editor.suggestSelection": "first",
+    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+    "java.project.importOnFirstTimeStartup": "automatic",
+    "go.enableCodeLens": {
+        "references": false,
+        "runtest": true
+    },
 }
