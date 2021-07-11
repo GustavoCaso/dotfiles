@@ -10,68 +10,8 @@ kubectl-short-aliases
 # cloudplatform: add Shopify clusters to your local kubernetes config
 export KUBECONFIG=${KUBECONFIG:+$KUBECONFIG:}/Users/gustavocaso/.kube/config:/Users/gustavocaso/.kube/config.shopify.cloudplatform
 
-
-## K8s East
-alias east1c='k --context=core-us-east1-1 --namespace=shopify-core'
-alias east2c='k --context=core-us-east1-2 --namespace=shopify-core'
-alias east3c='k --context=core-us-east1-3 --namespace=shopify-core'
-alias east6c='k --context=core-us-east1-6 --namespace=shopify-core'
-alias east1r='k --context=core-us-east1-1 --namespace=shopify-core-redis'
-alias east2r='k --context=core-us-east1-2 --namespace=shopify-core-redis'
-alias east3r='k --context=core-us-east1-3 --namespace=shopify-core-redis'
-alias east6r='k --context=core-us-east1-4 --namespace=shopify-core-redis'
-
-## K8s Central
-alias central1c='k --context=core-us-central1-1 --namespace=shopify-core'
-alias central2c='k --context=core-us-central1-2 --namespace=shopify-core'
-alias central3c='k --context=core-us-central1-3 --namespace=shopify-core'
-alias central6c='k --context=core-us-central1-6 --namespace=shopify-core'
-alias central1r='k --context=core-us-central1-1 --namespace=shopify-core-redis'
-alias central2r='k --context=core-us-central1-2 --namespace=shopify-core-redis'
-alias central3r='k --context=core-us-central1-3 --namespace=shopify-core-redis'
-alias central6r='k --context=core-us-central1-6 --namespace=shopify-core-redis'
-
-random_web_pod() {
-  local location=$1; shift
-
-  if [[ -z $location ]]; then
-    echo "Usage: "
-    echo "$ random_web_pod [location]"
-    return 1
-  fi
-
-  if [[ "$location" = "east" ]]; then
-    kubectl --namespace shopify-core --context core-us-east1-1 get pods -l type=web --field-selector=status.phase=Running --no-headers | awk '{print $1}' | head -n1
-  elif [[ $location == "central" ]]; then
-    kubectl --namespace shopify-core --context core-us-central1-1 get pods -l type=web --field-selector=status.phase=Running --no-headers | awk '{print $1}' | head -n1
-  elif [[ $location == "na" ]]; then
-    kubectl --namespace shopify-core --context tier1-na-ne1-3 get pods -l type=web --field-selector=status.phase=Running --no-headers | awk '{print $1}' | head -n1
-  fi
-}
-alias rwp=random_web_pod
-
-random_job_pod() {
-  local location=$1; shift
-
-  local type=$1; shift
-
-  if [[ -z $location || -z $type ]]; then
-    echo "Usage: "
-    echo "$ random_job_pod [location] [type]"
-    return 1
-  fi
-
-  if [[ "$location" = "east" ]]; then
-    kubectl --namespace shopify-core --context core-us-east1-1 get pods -l type=jobs --field-selector=status.phase=Running --no-headers | grep ${type} | awk '{print $1}' | head -n1
-  elif [[ $location == "central" ]]; then
-    kubectl --namespace shopify-core --context core-us-central1-1 get pods -l type=jobs --field-selector=status.phase=Running --no-headers | grep ${type} | awk '{print $1}' | head -n1
-  elif [[ $location == "na" ]]; then
-    kubectl --namespace shopify-core --context tier1-na-ne1-3 get pods -l type=jobs --field-selector=status.phase=Running --no-headers | grep ${type} | awk '{print $1}' | head -n1
-  fi
-}
-alias rjp=random_job_pod
-
 #python
 eval "$(pyenv init -)"
 
 export LOG_LEVEL=debug
+export VERBOSE_HEDWIG=1
